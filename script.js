@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  gsap.registerPlugin(ScrollTrigger);
+
   // Smooth scroll
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', e => {
@@ -12,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   gsap.from('.hero-content p',{y:30,opacity:0,duration:1.2,delay:0.5});
   gsap.from('.btn',{y:20,opacity:0,duration:1,stagger:0.2,delay:0.8});
 
-  // Projects slider parallax hover
+  // Project parallax hover
   document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mousemove', e => {
       const rect = card.getBoundingClientRect();
@@ -25,18 +27,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // About section animated stats
+  // About stats animation
   gsap.utils.toArray('.stat').forEach(stat => {
-    gsap.from(stat, {
-      scrollTrigger: {
-        trigger: stat,
-        start: 'top 80%',
-        toggleActions: 'play none none none'
+    gsap.from(stat,{
+      scrollTrigger:{
+        trigger:stat,
+        start:'top 80%',
+        toggleActions:'play none none none'
       },
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.3
+      y:50,
+      opacity:0,
+      duration:1,
+      stagger:0.3
     });
   });
 });
