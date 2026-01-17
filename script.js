@@ -1,42 +1,30 @@
-// 🌙 Dark Mode
-const darkBtn = document.getElementById("darkBtn");
+// Smooth scroll animation
+const links = document.querySelectorAll('.nav-links a');
 
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark");
+
+links.forEach(link => {
+link.addEventListener('click', e => {
+e.preventDefault();
+document.querySelector(link.getAttribute('href'))
+.scrollIntoView({ behavior: 'smooth' });
+});
+});
+
+
+// Animate text
+const text = document.querySelector('.animate-text');
+let i = 0;
+const message = text.innerText;
+text.innerText = '';
+
+
+function typeEffect() {
+if (i < message.length) {
+text.innerText += message.charAt(i);
+i++;
+setTimeout(typeEffect, 80);
+}
 }
 
-darkBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.body.classList.contains("dark") ? "dark" : "light"
-  );
-});
 
-// 🌍 Language Toggle
-let isArabic = false;
-const langBtn = document.getElementById("langBtn");
-
-langBtn.addEventListener("click", () => {
-  isArabic = !isArabic;
-
-  document.querySelectorAll("[data-en]").forEach(el => {
-    el.textContent = isArabic ? el.dataset.ar : el.dataset.en;
-  });
-
-  document.body.dir = isArabic ? "rtl" : "ltr";
-  document.documentElement.lang = isArabic ? "ar" : "en";
-});
-
-// ✨ Scroll Animation
-const elements = document.querySelectorAll(".fade");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-});
-
-elements.forEach(el => observer.observe(el));
+typeEffect();
