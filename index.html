@@ -2,74 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eman Mohamed Ibrahem | Backend .NET Developer</title>
-  <!-- Separate CSS file -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Controls -->
-  <div class="controls">
-    <button onclick="toggleTheme()">🌙 Dark Mode</button>
-    <button onclick="toggleLang()">🌍 AR / EN</button>
-    <a href="cv.pdf" download class="cv-btn">📄 Download CV</a>
-  </div>
+<header class="top-bar">
+  <button id="darkBtn">🌙</button>
+  <button id="langBtn">🌍</button>
+  <a href="cv.pdf" download class="cv-btn">📄 Download CV</a>
+</header>
 
-  <header>
-    <h1 data-en="Eman Mohamed Ibrahem" data-ar="إيمان محمد إبراهيم">Eman Mohamed Ibrahem</h1>
-    <p data-en="Backend .NET Developer (ASP.NET Core)" data-ar="مطور .NET Backend">Backend .NET Developer (ASP.NET Core)</p>
-  </header>
+<header class="hero">
+  <h1 data-en="Eman Mohamed Ibrahem" data-ar="إيمان محمد إبراهيم">
+    Eman Mohamed Ibrahem
+  </h1>
+  <p data-en="Backend .NET Developer (ASP.NET Core)"
+     data-ar="مطور باك إند دوت نت (ASP.NET Core)">
+    Backend .NET Developer (ASP.NET Core)
+  </p>
+</header>
 
-  <main class="container">
+<main class="container">
 
-    <section>
-      <h2 data-en="Profile" data-ar="الملف الشخصي">Profile</h2>
-      <p data-en="Backend .NET Developer with strong experience in ASP.NET Core Web API, Entity Framework Core, and SQL Server." 
-         data-ar="مطور .NET متخصص في بناء Web APIs باستخدام ASP.NET Core و Entity Framework و SQL Server.">
-         Backend .NET Developer with strong experience in ASP.NET Core Web API, Entity Framework Core, and SQL Server.
-      </p>
-    </section>
+  <section class="card">
+    <h2 data-en="Profile" data-ar="الملف الشخصي">Profile</h2>
+    <p data-en="Backend .NET Developer with strong experience in ASP.NET Core Web API, Entity Framework Core, and SQL Server."
+       data-ar="مطور باك إند بخبرة قوية في ASP.NET Core Web API و Entity Framework و SQL Server.">
+      Backend .NET Developer with strong experience in ASP.NET Core Web API, Entity Framework Core, and SQL Server.
+    </p>
+  </section>
 
-    <section>
-      <h2 data-en="Projects" data-ar="المشاريع">Projects</h2>
-      <div class="grid">
-        <div class="card animate">
-          <img src="images/talabat.png" alt="Talabat Project" />
-          <h3>Talabat System</h3>
-          <a href="https://github.com/" target="_blank">GitHub Repo</a>
-        </div>
-        <div class="card animate">
-          <img src="images/gym.png" alt="Gym System" />
-          <h3>Gym Management System</h3>
-          <a href="https://github.com/" target="_blank">GitHub Repo</a>
-        </div>
-      </div>
-    </section>
+  <section>
+    <h2 data-en="Projects" data-ar="المشاريع">Projects</h2>
 
-  </main>
+    <div class="projects">
 
-  <footer>
-    <p>© 2026 Eman Mohamed Ibrahem</p>
-  </footer>
+      <article class="project-card fade">
+        <h3>Talabat System</h3>
+        <p data-en="Food ordering system with role-based authorization."
+           data-ar="نظام طلبات طعام مع صلاحيات متعددة.">
+          Food ordering system with role-based authorization.
+        </p>
+        <a href="#" target="_blank">GitHub Repo</a>
+      </article>
 
-<script>
-  let dark = false;
-  let ar = false;
+      <article class="project-card fade">
+        <h3>Gym Management System</h3>
+        <p data-en="MVC system with authentication and CRUD operations."
+           data-ar="نظام إدارة نادي رياضي باستخدام MVC.">
+          MVC system with authentication and CRUD operations.
+        </p>
+        <a href="#" target="_blank">GitHub Repo</a>
+      </article>
 
-  function toggleTheme() {
-    document.body.classList.toggle('dark');
-  }
+    </div>
+  </section>
 
-  function toggleLang() {
-    ar = !ar;
-    document.querySelectorAll('[data-en]').forEach(el => {
-      el.textContent = ar ? el.dataset.ar : el.dataset.en;
-    });
-  }
-</script>
+</main>
 
+<footer>
+  © 2026 Eman Mohamed Ibrahem
+</footer>
 
-
+<script src="script.js"></script>
 </body>
 </html>
