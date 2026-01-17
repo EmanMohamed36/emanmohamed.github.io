@@ -8,10 +8,34 @@ body{background:#0f172a;color:#fff;overflow-x:hidden;}
 .hero-content{max-width:500px;text-align:center;}
 .hero-img img{width:300px;border-radius:50%;transform:rotateY(0deg);transition:.8s;margin-top:20px;}
 .hero-img img:hover{transform:rotateY(15deg) rotateX(10deg) scale(1.05);}
-.btn{padding:12px 30px;border:none;border-radius:30px;font-weight:bold;cursor:pointer;transition:.3s;}
-.btn-primary{background:linear-gradient(45deg,#ff3cac,#784ba0);color:#fff;margin-right:10px;}
-.btn-secondary{background:linear-gradient(45deg,#38bdf8,#0ea5e9);color:#fff;}
-.btn:hover{transform: scale(1.1);}
+.btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+  color: #fff; /* نص أبيض واضح */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* ظل يخلي الزر ظاهر */
+}
+
+.btn-primary {
+  background: linear-gradient(45deg,#ff3cac,#784ba0);
+  color: #fff;
+  margin-right: 10px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5); /* يزيد وضوح النص */
+}
+
+.btn-secondary {
+  background: linear-gradient(45deg,#38bdf8,#0ea5e9);
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2); /* يبرز الزر عند hover */
+}
 section{padding:100px 30px;}
 .projects .project-slider{display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;}
 .project-card{min-width:250px;height:180px;border-radius:20px;overflow:hidden;transition:.5s;transform-style: preserve-3d;}
