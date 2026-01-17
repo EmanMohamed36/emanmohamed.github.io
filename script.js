@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Hero animations
   gsap.from('.hero-content h1',{y:-50,opacity:0,duration:1.2});
   gsap.from('.hero-content p',{y:30,opacity:0,duration:1.2,delay:0.5});
+   gsap.from('.btn h1',{y:-50,opacity:0,duration:1.2});
+  gsap.from('.btn p',{y:30,opacity:0,duration:1.2,delay:0.5});
  // gsap.from('.btn',{y:20,opacity:0,duration:1,stagger:0.2,delay:0.8});
 
   // Project parallax hover
